@@ -1,0 +1,204 @@
+/*
+	An id is a unique identifier that we use for things that are only going to occur once on the page. 
+	So for headers, footers, navigation, etc we use id's, and for any reccuring elements like links 
+	we should use classes, which can occur multiple times on the same page.
+*/
+
+
+/* Global Font properties */
+body {
+	font-family: Arial, Helvetica, Verdana, Sans-serif;
+	font-size: 12px;
+	color: #666666;
+	background: #ffffff;
+}
+
+/* Header Logo
+
+The reason we used padding-right instead of margin-right is because margins can often
+trigger weird bugs in IE if used in certain places.
+*/
+h1 {
+	margin: 0;
+	padding: 0;
+	float: right;
+	margin-top: 57px;
+	padding-right: 31px;
+}
+
+/* Main page container 
+	
+	we want to center this div. This is done by setting the margins on it to auto. 
+	When the left and right margins are set to auto, they will even each other out 
+	and the div will sit in the center of its container.
+
+	Note that as more content is added to this div, 
+	it will automatically change its height to fit whatever content is placed inside it.
+*/
+#page-container {
+	width: 760px;
+	margin: auto; /* Horizontal Center */
+}
+
+/* Main Navigation
+
+Notice we didn’t specify the width of the div. 
+This is because by default, a div will stretch to fill its parent container, 
+which in this case, is our #page-container div that was set to 760px wide.
+*/
+#main-nav { 
+	height: 50px;
+	padding-left: 11px;
+}
+
+#main-nav ul { 
+	margin: 0;
+	padding: 0;
+}
+
+/* This sets the definition titles (our individual nav item containers) to float left,
+which stacks them left to right, instead of one under the other. 
+*/
+#main-nav li {
+	float: left;
+}
+
+/* Sets the link to the same dimensions as its surrounding container, and hides the text using the overflow property */
+#main-nav li a {
+	display: block;
+	height: 0px !important;
+	padding: 50px 0 0 0;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}
+
+/* Sets the background position to move up 50px when a link is hovered */
+#main-nav li a:hover {
+	background-position: 0 -50px;
+}
+
+/* Sets the individual widths of each nav item, and the paths to each image */
+#about,
+#about a {
+	width: 71px;
+	background-image: url('../images/nav/about.gif');
+}
+
+#services a {
+	width: 84px;
+	background-image: url('../images/nav/services.gif');
+}
+
+#portfolio a {
+	width: 95px;
+	background-image: url('../images/nav/portfolio.gif');
+}
+
+#contact a {
+	width: 106px;
+	background-image: url('../images/nav/contact.gif');
+}
+
+/* This large CSS selector checks to see what class the body tag has, and then sets the background position of the correct navbar. 
+So if you wanted the about navbar to be selected, you would set a class=“about” on the body tag 
+*/
+body.about #about a,
+body.services #services a,
+body.portfolio #portfolio a,
+body.contact #contact a {
+	background-position: 0 -100px;
+}
+
+body.about #header {
+	height: 150px;
+	background: #db6d16 url('../images/headers/about.jpg');
+}
+/* Header Container */
+#header {
+	height: 150px;
+	background: #db6d16 url('../images/headers/about.jpg');
+}
+
+/* Siderbar A 
+
+The leading (vertical space between lines of text) on the content text and sidebar text should be larger,
+according to the graphic draft. In CSS, leading is set with the line-height attribute. Lets add a line height of 18px
+*/
+#sidebar-a {
+	float: right;
+	width: 280px;
+	line-height: 18px;
+}
+
+#sidebar-a .padding {
+	padding: 25px;
+}
+/* Content 
+
+We want the content div to sit along side the sidebar div, with its right edge against 
+the left edge of the sidebar.
+An easy way to achieve this in a float layout like this, is to put a right margin on our content div 
+that is the same width as our sidebar, in this case 280px. This will push the right edge of the content 
+away from the right edge of the page-container.
+
+The leading (vertical space between lines of text) on the content text and sidebar text should be larger,
+according to the graphic draft. In CSS, leading is set with the line-height attribute. Lets add a line height of 18px
+*/
+#content {
+	margin-right: 280px;
+	line-height: 18px;
+}
+
+#content h2 {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 15px;
+}
+
+#content p {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 15px;
+}
+
+#content .padding {
+	padding: 25px;
+}
+/* Footer 
+
+By default, any floated element will not push down elements that are below it. 
+This is because floated elements are not considered part of the document ‘flow’. 
+Its like they are on another layer ‘floating’ above the other elements, and becuase of this, it can’t effect their positions.
+
+What can we do to fix this problem? Introducing the “clear” css property.
+
+When an element has the clear property assigned, if it comes into contact with 
+a float it is placed right below where that float ends. You can specify if it is effected by 
+only left floats or only right floats, in this case we could use either ‘right’ or ‘both’. We’ll use clear: both just to be safe.
+*/
+#footer {
+	clear: both;
+	height: 66px;
+	font-family: Tahoma, Arial, Helvetica, Sans-serif;
+	font-size: 10px;
+	color: #c9c9c9;
+	border-top: 1px solid #efefef;
+	padding: 13px 25px;
+	line-height: 18px;
+}
+
+/* Change the link color and remove default link underline */
+#footer a {
+	color: #c9c9c9;
+	text-decoration: none; /* remove default underline */
+}
+
+#footer a:hover {
+	color: #db6d16;
+}
+
+#altnav {
+	width: 350px;
+	float: right;
+	text-align: right;
+}

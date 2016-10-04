@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Additional information for browsers -->
+	<meta charset="UTF-8">
+	<!-- Application title  -->
+	<title>CSS Website</title>
+
+	<style type="text/css">
+		/* Reset default margin and padding on the html and body tags */
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		/* Hide the element */
+		.hidden {
+			display: none;
+		}
+	</style>
+	
+	<!-- Loading custom stylings -->
+	<link rel="stylesheet" type="text/css" href="css/master.css">
+</head> <!-- End of head -->
+
+<body class="about">
+
+	<div id="page-container">
+		
+		<div id="main-nav">
+			<ul>
+				<li id="about"><a href="#">About</a></li>
+				<li id="services"><a href="#">Services</a></li>
+				<li id="portfolio"><a href="#">Portfolio</a></li>
+				<li id="contact"><a href="#">Contact</a></li>
+			</ul>
+		</div> <!-- End of main navigation -->
+
+		<div id="header">
+			<h1><img src="images/general/logo_enlighten.gif" alt="Enlighten Design" width="236" height="36" border="0"></h1>
+		</div> <!-- End of header -->
+		
+		<div id="sidebar-a">
+			<div class="padding">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam gravida enim ut risus.
+		    Praesent sapien purus, ultrices a, varius ac, suscipit ut, enim. Maecenas in lectus.
+		    Donec in sapien in nibh rutrum gravida. Sed ut mauris. Fusce malesuada enim vitae lacus
+		    euismod vulputate. Nullam rhoncus mauris ac metus. Maecenas vulputate aliquam odio.
+		    Duis scelerisque justo a pede. Nam augue lorem, semper at, porta eget, placerat eget,
+		    purus. Suspendisse mattis nunc vestibulum ligula. In hac habitasse platea dictumst.
+			</div>
+		</div> <!-- End of sidebar block -->
+		
+		<div id="content">	
+			<div class="padding">
+				<h2><img src="images/headings/about.gif" alt="About" width="54" height="14"></h2>
+				<p><strong>Enlighten Design</strong> is an Internet solution provider that specilises in front and back end developement.To view some of the web sites we have created view our portfolio.</p>
+				<p>We are currently undergoing a 'face lift', so if you have any questions or would like more information
+				about the services we provide please feel free to contact us.</p>
+				<h2><img src="images/headings/contact.gif" alt="Contact Us" width="98" height="14"></h2>
+				<p>
+					Phone: (07) 853 6060 <br />
+					Fax: (07) 853 6060 <br />
+					Email: <a href="mailto:info@enlighten.co.nz">info@enlighten.co.nz</a> <br />
+					P.O Box: 14159, Hamilton, New Zealand
+				</p>
+				<p><a href="#">More contact information...</a></p>
+			</div>
+		</div> <!-- End of content block -->
+
+		<!-- 
+			We want the alternate navigation to float right, like we did with the sidebar and the content, so we’ll put that in the div first. In theory you should be able to float divs regardless of where they are in the source, but bugs in IE make this difficult, so for now, any floated items should come first in the source order.
+		 -->
+		<div id="footer">
+			<div id="altnav">
+				<a href="#">About</a>
+				<a href="#">Services</a>
+				<a href="#">Portfolio</a>
+				<a href="#">Contact US</a>
+				<a href="#">Terms of Trade</a>
+			</div>
+			Copyright &copy; Enlighten Designs <br />
+
+			Powered by <a href="http://www.enlightenhosting.com/">Enlighten Hosting</a> and <a href="http://www.vadmin.co.nz/">Vadmin 3.0 CMS</a>
+		</div> <!-- End of footer -->
+
+	</div> <!-- End of page container -->
+
+</body> <!-- End of body -->
+
+</html> <!-- End of html -->
