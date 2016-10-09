@@ -1,0 +1,11 @@
+{
+  "name": "F1FeederApp",
+  "version": "0.0.0",
+  "authors": [
+    "Ganesh Khutwad <ganeshkhutwad30690@gmail.com>"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-material": "^1.1.1"
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Additional information for browser -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<!-- Application Title -->
+	<title>AngularJS Material Design</title>
+	
+	<style type="text/css">
+		/* FIXME: Colors (not in use) */
+		.red { background-color: red; }
+		.lightblue { background-color: lightblue; }
+		.lightgreen { background-color: lightgreen; }
+	</style>
+	
+	<!-- Loading angular material stylings -->
+	<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
+	<!-- Loading application custom stylings -->
+	<link rel="stylesheet" type="text/css" href="app/common/assets/styleguide/app.css">
+</head>
+
+<!-- AngularJS App Starts Here! -->
+<body ng-app="materialDesign" layout="column" ng-controller="UserController as userCtrl">
+	
+	<!-- 
+		It is used to place a toolbar in app 
+		Toolbars are usually used above a content area to display the title of the current page,
+		and show relevant action buttons for the page
+	-->
+	<md-toolbar>
+		<h1>Angular Material Starter</h1>
+	</md-toolbar> <!-- End of toolbar -->
+	
+	<!-- 
+		Layout direction for its children: horizontally in a row (layout="row")
+
+		flex directive use to a layout's child element and the element will flex(grow or shrink) to fit
+		the area unused by other elements
+		flex defines how the element will adjust its size with respect to its parent container and the other
+		elements within the container 
+	-->
+	<div class="container" layout="row" flex>
+		
+		<!-- Side Navigation -->
+		<md-sidenav class="md-whiteframe-4dp" md-is-locked-open="true">
+
+			<!-- It is a list container for 1..n <md-list-item> tags -->
+			<md-list>
+				<!-- This element can be used to represent some information in a row -->
+				<md-list-item ng-repeat="user in userCtrl.users">
+					<!-- This element use to create button -->
+					<md-button ng-click="userCtrl.selectUser(user)">
+						<!-- This directive makes it easier to use vector based icons in app -->
+						<md-icon class="avatar" md-svg-src="{{user.avatar}}"></md-icon>
+						{{user.name}}
+					</md-button>
+				</md-list-item>
+			</md-list> <!-- End of list -->
+
+		</md-sidenav> <!-- End of side navigation -->
+		
+		<!-- It is a container element useful for scrollable element -->
+		<md-content id="content" flex>
+			<md-icon class="avatar" md-svg-src="{{userCtrl.selected.avatar}}"></md-icon>
+			<h2>{{userCtrl.selected.name}}</h2>
+			<p>{{userCtrl.selected.content}}</p>
+		</md-content>	<!-- End of content -->
+
+	</div> <!-- End of container -->
+
+	<!-- Loading angular, material and its dependencies -->
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+	
+	<!-- Loading modules -->
+	<script type="text/javascript" src="app/welcome-message/welcome-message.module.js"></script>
+	<script type="text/javascript" src="app/users/user.module.js"></script>
+	<script type="text/javascript" src="app/app.module.js"></script>
+
+	<!-- Loading services -->
+	<script type="text/javascript" src="app/welcome-message/print-message.service.js"></script>
+	<script type="text/javascript" src="app/users/user.service.js"></script>
+	
+	<!-- Loading controllers -->
+	<script type="text/javascript" src="app/users/user.controller.js"></script>
+	
+	<!-- Loading run block script -->
+	<script type="text/javascript" src="app/app.run.js"></script>
+	<script type="text/javascript">
+		angular
+			.module('materialDesign')
+			.config(function ($mdIconProvider) {
+				$mdIconProvider.defaultIconSet('app/common/assets/svg/avatars.svg', 128);
+			});
+	</script>
+</body> <!-- End of body -->
+
+</html> <!-- End of html -->
