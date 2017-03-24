@@ -1,0 +1,36 @@
+body {
+	overflow: hidden;
+}
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin-top: 66px;
+/* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+#wrap > .container {
+  padding: 60px 15px 0;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+#footer {
+	height: 60px;
+	width: 100%;
+	background-color: #f5f5f5;
+	bottom: 0;
+	position: fixed;
+}
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
